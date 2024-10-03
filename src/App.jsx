@@ -2,6 +2,19 @@ import { useState, useEffect} from 'react'
 import './App.css'
 
 function App() {
+
+  const [title, setTitle] = useState('');
+  const [detail, setDetail] = useState('');
+  const [task, SetTask] = useState([]);
+  
+  const handleTask = () =>{
+    alert("Something is click")
+  }
+
+  const handleDelete = () => {
+        
+  }
+
   
   return (
     <>
@@ -18,6 +31,7 @@ function App() {
               id="title"
               type="text"
               placeholder="Enter your task"
+              onChange={(e) => setTitle(e.target.value)}
             />
 
             <label htmlFor="detail" className="uppercase">Task Detail</label>
@@ -31,7 +45,7 @@ function App() {
 
           <div className="flex justify-between mt-4">
             <button className="p-2 text-white bg-red-600 rounded-md">Delete</button>
-            <button className="p-2 text-white bg-green-600 rounded-md">Add More</button>
+            <button onClick={handleTask()} className="p-2 text-white bg-green-600 rounded-md">Add More</button>
           </div>
         </div>
       </div>
